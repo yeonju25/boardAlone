@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+<div style="text-align: center; align-items: center;">
+  <h1>등록 화면</h1>
+  <div>
+    <form action="/friend/modify" method="post">
+      <div>
+        <span>Fno</span>
+        <input type="text" name="fno" th:value="${dto.fno}" readonly="readonly">
+      </div>
+      <div>
+        <span>Name</span>
+        <input type="text" name="name" size="20" th:value="${dto.name}">
+      </div><br>
+      <div>
+        <span>Phone</span>
+        <input type="text" name="phone" size="20" th:value="${dto.phone}">
+      </div><br>
+      <div>
+        <span>Email</span>
+        <input type="text" name="email" size="20" th:value="${dto.email}">
+      </div><br>
+      <div>
+        <span>Address</span>
+        <input type="text" name="address" size="20" th:value="${dto.address}">
+      </div><br>
+      <div>
+        <button type="submit">수정</button>
+        <button type="reset">정정</button>
+      </div>
+    </form>
+  </div>
+</div>
+</body>
+</html>

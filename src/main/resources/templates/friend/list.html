@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+</head>
+<body>
+
+<div style="text-align: center">
+    <h1>목록 화면</h1>
+    <div>
+        <button type="button" th:onclick="|location.href='@{/friend/register}'|">등록</button>
+    </div><br>
+    <div>
+    <form method="post">
+        <table style="border: 1px solid black; margin-left: auto; margin-right: auto" >
+            <tr>
+                <td>Fno</td>
+                <td>Name</td>
+                <td>Phone</td>
+                <td>Email</td>
+                <td>Address</td>
+            </tr>
+            <tr th:each="dto : ${list}">
+                <td th:text="${dto.fno}"></td>
+                <td th:text="${dto.name}"></td>
+                <td th:text="${dto.phone}"></td>
+                <td th:text="${dto.email}"></td>
+                <td th:text="${dto.address}"></td>
+                <td><button type="button" th:onclick="|location.href='@{/friend/modify(fno=${dto.fno})}'|">수정</button></td>
+                <td><button type="button" th:onclick="|location.href='@{/friend/remove(fno=${dto.fno})}'|">삭제</button></td>
+            </tr>
+        </table>
+
+    </form>
+    </div>
+</div>
+</body>
+</html>
